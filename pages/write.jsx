@@ -14,14 +14,14 @@ function Write() {
     const name = cookie.get("username")
     
     const { data } = axios.post(
-      'http://192.168.29.254:1337/api/messages',
+      'https://adchat.herokuapp.com/api/messages',
       {
         data:{message: value,name:name},
       },
       {
         headers: {
           Authorization:
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MDQyNDU2LCJleHAiOjE2NDg2MzQ0NTZ9.Q5y_1V5EDfUwTcx8JLEnmlc8Jg3LJ2HaVD09rG_xsOw',
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MDY1NTYzLCJleHAiOjE2NDg2NTc1NjN9.hK19Mn7S9779rhwr4EKtdEqRow6gnjprnKDYvpZcYVg',
         },
       }
     );
