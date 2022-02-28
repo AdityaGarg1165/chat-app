@@ -1,0 +1,44 @@
+.message
+{
+  margin-left: 900px;
+  margin-top: 45px;
+  margin-left: 10px;
+  font-size: large;
+  font-weight: 600;
+}
+.messages
+{
+  margin-top: 20vh;
+}
+.container
+{
+  background-color: #E3E3E3;
+  height: 100%;
+  width: 194.5vh;
+  margin-top: -14px;
+  z-index: -999;
+  position: absolute;
+}
+.likes
+{
+  margin-left: 94vh;
+  margin-top: -8vh;
+}
+.messagecontainer
+{
+  width: 110vh;
+  margin-left: 38vh;
+  margin-top: 4vh;
+  border-radius: 5px;
+  border: 0.1px solid lightgray;
+  height: 17vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  z-index: -9999;
+}
+.name
+{
+  margin-left: 1vh;
+}
