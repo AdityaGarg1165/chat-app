@@ -14,7 +14,7 @@ function Write() {
     const name = cookie.get("username")
     
     const { data } = axios.post(
-      'http://localhost:1337/api/messages',
+      'http://192.168.29.254:1337/api/messages',
       {
         data:{message: value,name:name},
       },
