@@ -10,14 +10,13 @@ import Router from 'next/router'
 
 function Write() {
   const [value,setvalue] = useState(null)
+  const name = cookie.get("username")
+  useEffect(()=>{
+    if (name === undefined||null){
+      Router.push("/login")
+    }
+  },[])
   const addvalue = async () => {
-
-    const name = cookie.get("username")
-    useEffect(()=>{
-      if (name === undefined||null){
-        Router.push("/login")
-      }
-    },[])
     
     const { data } = axios.post(
       'https://adchat.herokuapp.com/api/messages',
@@ -37,7 +36,7 @@ function Write() {
     <div>
         <input type="text" onChange={(event)=>{setvalue(event.target.value)}} id="inp" />
         
-        <Link href="/"><button onClick={addvalue}>Submit</button></Link>
+        <Link href="/"><button onClick={addvaddvalue}>Submit</button></Link>
     </div>
   )
 }
