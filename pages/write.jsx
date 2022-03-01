@@ -15,7 +15,7 @@ function Write() {
     if (name === undefined||null){
       Router.push("/login")
     }
-  },[])
+  },[name])
   const addvalue = async () => {
     
     const { data } = axios.post(
