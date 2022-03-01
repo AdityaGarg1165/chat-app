@@ -1,13 +1,20 @@
 import React, { useEffect,useState } from 'react'
 import styles from '../styles/Home.module.css'
+import cookie from 'js-cookie'
 
 export default function Home() {
   const [data,setData] = useState(null)
-  useEffect(async ()=>{
-    const res = await fetch("https://adchat.herokuapp.com/api/messages")
+  const name  = cookie.get("username")
+  useEffect(()=>{
+    const fetchData = async () => {
+    const res = await fetch("https://192.168.29.254/api/messages")
     const json = await res.json()
     const jsondata = await json['data']
     setData(jsondata)
+    
+    }
+    fetchData()
+    
   })
   return (
     <div className={styles.container}>

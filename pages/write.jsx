@@ -1,20 +1,25 @@
-import next from 'next';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import cookie from 'js-cookie'
 import axios from 'axios';
+import Router from 'next/router'
 
 
 
 function Write() {
   const [value,setvalue] = useState(null)
+  const name = cookie.get("username")
+    useEffect(()=>{
+      if(name === undefined || null){
+        Router.push("/login")
+      }
+    })
   const addvalue = async () => {
 
-    const name = cookie.get("username")
     
     const { data } = axios.post(
-      'https://adchat.herokuapp.com/api/messages',
+      'http://192.168.29.254/api/messages',
       {
         data:{message: value,name:name},
       },
