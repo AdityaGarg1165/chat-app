@@ -11,6 +11,11 @@ import Router from 'next/router'
 function Write() {
   const [value,setvalue] = useState(null)
   const name = cookie.get("username")
+  useEffect(()=>{
+    if (name === undefined||null){
+      Router.push("/login")
+    }
+  },[name])
   const addvalue = async () => {
     
     const { data } = axios.post(
@@ -25,11 +30,7 @@ function Write() {
         },
       }
     );
-    useEffect(()=>{
-      if (name === undefined||null){
-        Router.push("/login")
-      }
-    },[name])
+    
 }
     
   return (
