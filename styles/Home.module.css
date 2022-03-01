@@ -10,10 +10,6 @@
 {
   margin-top: 20vh;
 }
-.likes
-{
-  margin-top: -1vh;
-}
 .container
 {
   background-color: #E3E3E3;
@@ -26,7 +22,7 @@
 .likes
 {
   margin-left: 94vh;
-  margin-top: -8vh;
+  margin-top: -15vh;
 }
 .messagecontainer
 {

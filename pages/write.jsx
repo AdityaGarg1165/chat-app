@@ -1,3 +1,4 @@
+import next from 'next';
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
@@ -9,24 +10,24 @@ import Router from 'next/router'
 
 function Write() {
   const [value,setvalue] = useState(null)
-  const name = cookie.get("username")
-    useEffect(()=>{
-      if(name === undefined || null){
-        Router.push("/login")
-      }
-    })
   const addvalue = async () => {
 
+    const name = cookie.get("username")
+    useEffect(()=>{
+      if (name === undefined||null){
+        Router.push("/login")
+      }
+    },[])
     
     const { data } = axios.post(
-      'http://192.168.29.254/api/messages',
+      'https://adchat.herokuapp.com/api/messages',
       {
-        data:{message: value,name:name},
+        data:{message: value,name:name,likes:0},
       },
       {
         headers: {
           Authorization:
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MDY1NTYzLCJleHAiOjE2NDg2NTc1NjN9.hK19Mn7S9779rhwr4EKtdEqRow6gnjprnKDYvpZcYVg',
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MTExMjY2LCJleHAiOjE2NDg3MDMyNjZ9.cPhC9UPKR6DHZa3p5jRqqHIXPE_XTUxpPdSwZBYVFXo',
         },
       }
     );
